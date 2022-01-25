@@ -1,5 +1,5 @@
 --Creates Database for banking system
-CREATE DATABASE Bank
+CREATE DATABASE bank
 
 CREATE TABLE customers
 (
@@ -47,5 +47,6 @@ CREATE TABLE transactions
   CONSTRAINT transactions_accountId_fk FOREIGN KEY (accountId) REFERENCES accounts(accountId),
   CONSTRAINT transactions_loanId_fk FOREIGN KEY (loanId) REFERENCES loans(loanId)
 )
+
 
 
