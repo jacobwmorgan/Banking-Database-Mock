@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "sqltools.connections": [
     {
@@ -27,4 +28,22 @@
       "password": ""
     }
   ]
+=======
+{
+  "sqltools.connections": [
+    {
+      "mysqlOptions": {
+        "authProtocol": "default"
+      },
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 3306,
+      "driver": "MySQL",
+      "name": "Assignment",
+      "database": "bank",
+      "username": "root",
+      "password": ""
+    }
+  ]
+>>>>>>> c855d3632a92e83334eff65e11045673c84d8c66
 }
