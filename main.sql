@@ -132,23 +132,6 @@ VALUES (97684385,'2022-1-7',-193),
 (37720583,'2022-1-13',-31),
 (37720583,'2022-1-23',92)
 
-SELECT customers.firstName , customers.lastName , accounts.accountId from `customers` inner join accounts on customers.customerId = accounts.customerId where customers.customerId in (SELECT accounts.customerId from `accounts` where accounts.accountId in (SELECT loans.accountId from `loans` where loans.loanPayDate <= 7));
-SELECT customers.firstName , customers.lastName , accounts.accountId from `customers` inner join accounts on customers.customerId = accounts.customerId where customers.customerId in (SELECT accounts.customerId from `accounts` where accounts.accountId in (SELECT transactions.accountId from `transactions` where transactions.transactionTimeStamp BETWEEN '2022-1-10' AND '2022-1-15')); 
-
-SELECT customers.firstName , customers.lastName , SUM(transactions.amount) + accounts.openingBalance AS sumOf
-FROM `customers` 
-INNER JOIN `accounts`
-  ON customers.customerId = accounts.customerId 
-INNER JOIN `transactions`
-  ON accounts.accountId = transactions.accountId
-GROUP BY transactions.accountId HAVING sumOf >= 5000;
-
-SELECT SUM(accounts.openingBalance) + SUM(transactions.amount)
-FROM `accounts`
-INNER JOIN `transactions`
-  ON accounts.accountId = transactions.accountId
-
-
 DELIMITER $$
 CREATE PROCEDURE AmountInBank()
 BEGIN
